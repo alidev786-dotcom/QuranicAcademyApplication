@@ -1,51 +1,46 @@
 package com.example.quranicacademyapplication;
 
-import static java.security.AccessController.getContext;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    public TextView paraNUm;
-    public TextView ayatNum;
-    public Button btnSearch;
+    public TextView paraNumber;
+    public TextView ayatNumber;
+    public Button searchButton;
     public TextView parahName;
     public TextView EnglishParahName;
     public TextView ayats;
-    Button github;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        paraNUm = findViewById(R.id.ParahNum);
-        ayatNum = findViewById(R.id.AyatNum);
-        btnSearch = findViewById(R.id.btnSearch);
-        parahName = findViewById(R.id.ParahDisplayView);
+        paraNumber = findViewById(R.id.parahID);
+        ayatNumber = findViewById(R.id.ayatID);
+        searchButton = findViewById(R.id.searchButtonID);
+        parahName = findViewById(R.id.parahDisplayID);
         ayats = findViewById(R.id.AyatDisplayView);
-        EnglishParahName = findViewById(R.id.englishParahName);
+        EnglishParahName = findViewById(R.id.englishParahID);
 
 
 
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(paraNUm.getText().length() == 0 && ayatNum.getText().length() == 0)
+                if(paraNumber.getText().length() == 0 && ayatNumber.getText().length() == 0)
                 {
                     ayats.setText("[+]");
                 }
-                else if(paraNUm.getText().length() > 0 && ayatNum.getText().length() == 0)
+                else if(paraNumber.getText().length() > 0 && ayatNumber.getText().length() == 0)
                 {
                     QDH QuranMetaData = new QDH();
-                    int valP = Integer.parseInt(paraNUm.getText().toString());
+                    int valP = Integer.parseInt(paraNumber.getText().toString());
 
                     if (valP < 1 || valP > 30){
                     }
@@ -84,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     QDH QuranMetaData = new QDH();
-                    int valP = Integer.parseInt(paraNUm.getText().toString());
-                    int valA = Integer.parseInt(ayatNum.getText().toString())-1;
+                    int valP = Integer.parseInt(ayatNumber.getText().toString());
+                    int valA = Integer.parseInt(ayatNumber.getText().toString())-1;
 
                     if (valP < 1 || valP > 30){
 
@@ -124,16 +119,4 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        github.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final String url = "https://github.com/ghufran2508/QuraniAcademy/commits/master";
-                Uri webpage = Uri.parse(url);
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                startActivity(intent);
-            }
-        });
-    }
-}
+}}

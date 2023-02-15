@@ -82,7 +82,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnSearch"
+        android:id="@+id/searchButtonID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.311" />
 
     <EditText
-        android:id="@+id/ParahDisplayView"
+        android:id="@+id/parahDisplayID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:editable="true"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.445" />
 
     <EditText
-        android:id="@+id/AyatNum"
+        android:id="@+id/ayatID"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -126,7 +126,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/ParahNum"
+        android:id="@+id/parahID"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -139,7 +139,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/englishParahName"
+        android:id="@+id/englishParahID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
